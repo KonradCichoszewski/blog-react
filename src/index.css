@@ -62,9 +62,9 @@ nav {
   padding-left: 20px;
   padding-bottom: 20px;
   margin-top: 40px;
-  border-radius: 0px 0px 0px 40px;
-  border-bottom: solid rgb(237, 255, 75) 2px;
-  border-left: solid rgb(216, 255, 75) 5px;
+  border-radius: 0px 0px 0px 10px;
+  border-bottom: solid rgb(216, 255, 75) 2px;
+  border-left: solid rgb(216, 255, 75) 6px;
 }
 
 .post h3{
@@ -74,4 +74,32 @@ nav {
 #content {
   font-weight: lighter;
   text-align: justify;
+}
+
+#formContainer{
+  min-height: 70vh;
+  margin: 20px;
+}
+
+form > * {
+  margin: 20px;
+}
+
+Field{
+  min-width: 400px;
+}
+#postField{
+  min-height: 100px;
+}
+
+#footer{
+  margin-top: 40px;
+  display: block;
+  min-height: 100px;
+  background-color: black;
+  color: white;
+}
+
+#footer p{
+  padding: 20px;
 }

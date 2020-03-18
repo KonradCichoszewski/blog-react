@@ -1,5 +1,7 @@
-const initialState = {
-  posts: [
+import { combineReducers } from 'redux'
+import { reducer as formReducer } from 'redux-form'
+
+let initialState = [
       { id: 3,
         title: "My third post",
         content: "This is already my third post on the blog... Okay. This is already my third post on the blog... Okay." + 
@@ -16,11 +18,12 @@ const initialState = {
         title: "My second post",
         content: "And this is my second post on the blog! And this is my second post on the blog!" +
                 " And this is my second post on the blog! And this is my second post on the blog!"}
-    ]
-}
+];
 
-function mainReducer(state = initialState, action) {
+function posts(state = initialState, action) {
     return state
   }
 
-export default mainReducer;
+const rootReducer = combineReducers({posts, form: formReducer})
+
+export default rootReducer;

@@ -1,8 +1,13 @@
 import React from 'react';
+import PostForm from './PostForm';
 
 class CreatePost extends React.Component {
     render(){
-        return <p>This is the CreatePost page.</p>
+        return (
+            <div id='formContainer'>
+                <PostForm />
+            </div>
+        )
     }
 }
 

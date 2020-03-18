@@ -4,6 +4,7 @@ import {Route} from 'react-router-dom';
 import Home from './Home';
 import CreatePost from './CreatePost';
 import NavigationBar from './NavigationBar';
+import Footer from './Footer';
 import '../index.css';
 
 class App extends React.Component{
@@ -12,15 +13,9 @@ class App extends React.Component{
       <div className="App">
         <div className="container">
           <NavigationBar/>
-          <Route
-            path="/"
-            component={Home}
-            exact 
-          />
-          <Route
-            path="/createPost"
-            component={CreatePost} 
-          />
+          <Route exact path="/" component={Home} />
+          <Route path="/createPost" component={CreatePost} />
+          <Footer />
         </div>
       </div>
     );
