@@ -1,21 +1,17 @@
 import React from 'react';
-import {Route, NavLink} from 'react-router-dom';
+import {Route} from 'react-router-dom';
 
 import Home from './Home';
 import CreatePost from './CreatePost';
-import '../index.css'
+import NavigationBar from './NavigationBar';
+import '../index.css';
 
 class App extends React.Component{
   render(){
     return (
       <div className="App">
         <div className="container">
-          <nav>
-            <NavLink activeClassName="active" className="inactive" 
-                    to="/" exact>Home</NavLink>
-            <NavLink activeClassName="active" className="inactive"
-                    to="/createPost">Create post</NavLink>
-          </nav>
+          <NavigationBar/>
           <Route
             path="/"
             component={Home}

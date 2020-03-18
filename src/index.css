@@ -12,11 +12,16 @@ code {
     monospace;
 }
 
+.container{
+  background-color: rgb(241, 241, 241);
+}
+
 nav {
   height: 100px;
   background-color: black;
   color: white;
   display: flex;
+  box-shadow: black 0px 0px 2px 0px;
 }
 
 .inactive{
@@ -35,4 +40,38 @@ nav {
 
 .active{
   color: white;
+}
+
+#home{
+  margin-left: 50px;
+}
+
+#home h1{
+  padding: 15px;
+  margin-bottom: -5px;
+  margin-top: 40px;
+  border-radius: 5px;
+  color: white;
+  background-color: rgb(0, 0, 0);
+  font-weight: 300;
+  display: inline-block;
+}
+
+.post {
+  max-width: 600px;
+  padding-left: 20px;
+  padding-bottom: 20px;
+  margin-top: 40px;
+  border-radius: 0px 0px 0px 40px;
+  border-bottom: solid rgb(237, 255, 75) 2px;
+  border-left: solid rgb(216, 255, 75) 5px;
+}
+
+.post h3{
+  font-style: italic;
+}
+
+#content {
+  font-weight: lighter;
+  text-align: justify;
 }
