@@ -11,3 +11,28 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+nav {
+  height: 100px;
+  background-color: black;
+  color: white;
+  display: flex;
+}
+
+.inactive{
+  color: rgb(194, 194, 194);
+  text-decoration: none;
+  display: flexbox;
+  align-self: center;
+  padding: 50px;
+  transition-duration: 0.7s;
+  font-size: larger;
+}
+
+.inactive:hover{
+  color: white;
+}
+
+.active{
+  color: white;
+}

@@ -1,7 +1,9 @@
 import React from 'react';
 import {Route, NavLink} from 'react-router-dom';
+
 import Home from './Home';
 import CreatePost from './CreatePost';
+import '../index.css'
 
 class App extends React.Component{
   render(){
@@ -9,8 +11,10 @@ class App extends React.Component{
       <div className="App">
         <div className="container">
           <nav>
-            <NavLink to="/">Home </NavLink> |
-            <NavLink to="/createPost"> Create post</NavLink>
+            <NavLink activeClassName="active" className="inactive" 
+                    to="/" exact>Home</NavLink>
+            <NavLink activeClassName="active" className="inactive"
+                    to="/createPost">Create post</NavLink>
           </nav>
           <Route
             path="/"
