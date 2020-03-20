@@ -45,16 +45,20 @@ function blogApp(state = initialState, action) {
           content: action.value
         }
       })
-    case "ADD_POST":
-      return Object.assign({}, state, {
+    case "SUBMIT":
+      return updateObject(state, {
         posts: [
           ...state.posts,
           {
             id: 5,
-            title: action.title,
-            content: action.content
+            title: state.postForm.title,
+            content: state.postForm.content
           }
-        ]
+        ],
+        postForm: {
+          title: "no title",
+          content: "no content"
+        }
       })
     default: return state
   }

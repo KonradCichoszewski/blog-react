@@ -18,10 +18,8 @@ export function contentChange(value) {
     }
 }
 
-export function handleSubmit( value ) {
+export function handleSubmit() {
     return{
-        type: SUBMIT,
-        title: value.title,
-        content: value.content
+        type: SUBMIT
     }
 }
