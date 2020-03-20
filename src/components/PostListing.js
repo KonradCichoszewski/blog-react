@@ -10,6 +10,7 @@ function PostListing(props) {
         <Post
           title={post.title}
           content={post.content}
+          date={post.date}
           key={post.id}
         />)
     }

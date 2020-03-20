@@ -8,11 +8,11 @@ function PostForm(props) {
       <label>
         Title
         <textarea onChange={e => props.titleChange(e.target.value)}/>
-      </label>
+      </label><br/>
       <label>
         Post content
         <textarea onChange={e => props.contentChange(e.target.value)} />
-      </label>
+      </label><br/>
       <input type="submit" value="Submit" />
     </form>
   )
