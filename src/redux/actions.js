@@ -1,6 +1,7 @@
 const TITLE_CHANGE = 'TITLE_CHANGE'
 const CONTENT_CHANGE = 'CONTENT_CHANGE'
 const SUBMIT = 'SUBMIT'
+const DELETE_POST = 'DELETE_POST'
 
 export function titleChange(value) {
     console.log(value);
@@ -21,5 +22,12 @@ export function contentChange(value) {
 export function handleSubmit() {
     return{
         type: SUBMIT
+    }
+}
+
+export function deletePost(id) {
+    return{
+        type: DELETE_POST,
+        id: id
     }
 }

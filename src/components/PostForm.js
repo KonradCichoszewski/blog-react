@@ -1,5 +1,6 @@
 import React from 'react'
 import {connect} from 'react-redux'
+
 import {titleChange, contentChange, handleSubmit} from '../redux/actions'
 
 function PostForm(props) {

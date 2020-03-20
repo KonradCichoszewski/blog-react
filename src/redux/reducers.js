@@ -38,7 +38,8 @@ let initialState = {
   postForm: {
     title: "no title",
     content: "no content"
-  }
+  },
+  counter: 4
 };
 
 function blogApp(state = initialState, action) {
@@ -62,17 +63,26 @@ function blogApp(state = initialState, action) {
         posts: [
           ...state.posts,
           {
-            id: state.posts.length + 1,
+            id: state.counter++,
             title: state.postForm.title,
             content: state.postForm.content,
             date: getCurrentDate()
           }
         ],
         postForm: {
-          title: "no title",
-          content: "no content"
+          title: "",
+          content: ""
         }
       })
+      case "DELETE_POST": {
+        let filtered = Object.assign([], state.posts)
+        filtered = filtered.filter(post => { return post.id !== action.id })
+        console.log(filtered)
+        return updateObject(state, {
+            posts: filtered,
+            counter: --state.counter
+        }  
+      )}
     default: return state
   }
 }

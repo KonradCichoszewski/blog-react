@@ -11,6 +11,7 @@ function PostListing(props) {
           title={post.title}
           content={post.content}
           date={post.date}
+          id={post.id}
           key={post.id}
         />)
     }
@@ -23,15 +24,4 @@ function mapStateToProps(state) {
   }
 }
 
-// function mapDispatchToProps(dispatch) {
-//   return {
-//     addToCart: (item) => {
-//       dispatch({ type: 'ADD', payload: item })
-//     },
-//     removeFromCart: (item) => {
-//       dispatch({ type: 'REMOVE', payload: item })
-//     }
-//   }
-// }
-
-export default connect(mapStateToProps/*, mapDispatchToProps*/)(PostListing)
+export default connect(mapStateToProps)(PostListing)
