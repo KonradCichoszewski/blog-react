@@ -85,9 +85,6 @@ form > * {
   margin: 20px;
 }
 
-Field{
-  min-width: 400px;
-}
 #postField{
   min-height: 100px;
 }

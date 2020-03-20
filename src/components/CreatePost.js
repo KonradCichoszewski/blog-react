@@ -5,7 +5,7 @@ class CreatePost extends React.Component {
     render(){
         return (
             <div id='formContainer'>
-                <PostForm />
+                <PostForm/>
             </div>
         )
     }

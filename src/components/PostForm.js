@@ -1,25 +1,35 @@
 import React from 'react'
-import { Field, reduxForm } from 'redux-form'
+import {connect} from 'react-redux'
 
-let PostForm = props => {
-  const { handleSubmit } = props
+function PostForm(props) {
   return (
-    <form onSubmit={handleSubmit}>
-        <div>
-            <label htmlFor="title">Title</label><br />
-            <Field name="firstName" component="input" type="text" />
-        </div>
-        <div>
-            <label htmlFor="Post content">Post content</label><br/>
-            <Field id="postField" name="lastName" component="input" type="textarea" />
-        </div>
-        <button type="submit">Post!</button>
+    <form onSubmit={props.handleSubmit}>
+      <label>
+        Title
+        <textarea value={props.title} onChange={props.titleChange} />
+      </label>
+      <label>
+        Post content
+        <textarea value={props.content} onChange={props.contentChange} />
+      </label>
+      <input type="submit" value="Submit" />
     </form>
   )
 }
 
-PostForm = reduxForm({
-  form: 'post'
-})(PostForm)
+function mapStateToProps(state) {
+  const formData  = state.blogApp.postForm
+  return {
+    title: formData.title,
+    content: formData.content}
+}
 
-export default PostForm;
+const mapDispatchToProps = dispatch => {
+  return {
+    titleChange: (value) => dispatch(titleChange(value)),
+    contentChange: (value) => dispatch(contentChange(value)),
+    handleSubmit: (value) => dispatch(handleSubmit(value))
+  }
+}
+
+export default connect(mapStateToProps)(PostForm);
