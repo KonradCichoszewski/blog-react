@@ -1,16 +1,17 @@
 import React from 'react'
 import {connect} from 'react-redux'
+import {titleChange, contentChange, handleSubmit} from '../redux/actions'
 
 function PostForm(props) {
   return (
-    <form onSubmit={props.handleSubmit}>
+    <form onSubmit={ e => console.log(e)}>
       <label>
         Title
-        <textarea value={props.title} onChange={props.titleChange} />
+        <textarea onChange={e => props.titleChange(e.target.value)}/>
       </label>
       <label>
         Post content
-        <textarea value={props.content} onChange={props.contentChange} />
+        <textarea onChange={e => props.contentChange(e.target.value)} />
       </label>
       <input type="submit" value="Submit" />
     </form>
@@ -26,10 +27,10 @@ function mapStateToProps(state) {
 
 const mapDispatchToProps = dispatch => {
   return {
-    titleChange: (value) => dispatch(titleChange(value)),
-    contentChange: (value) => dispatch(contentChange(value)),
-    handleSubmit: (value) => dispatch(handleSubmit(value))
+    titleChange: (e) => dispatch(titleChange(e)),
+    contentChange: (e) => dispatch(contentChange(e)),
+    handleSubmit: () => dispatch(handleSubmit())
   }
 }
 
-export default connect(mapStateToProps)(PostForm);
+export default connect(mapStateToProps, mapDispatchToProps)(PostForm);

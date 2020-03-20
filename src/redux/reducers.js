@@ -1,5 +1,9 @@
 import { combineReducers } from 'redux'
 
+function updateObject(oldObject, newValues) {
+  return Object.assign({}, oldObject, newValues)
+}
+
 let initialState = {
   posts: [
     { id: 3,
@@ -20,15 +24,27 @@ let initialState = {
                 " And this is my second post on the blog! And this is my second post on the blog!"}
   ],
   postForm: {
-    title: "",
-    content: ""
+    title: "no title",
+    content: "no content"
   }
 };
 
 function blogApp(state = initialState, action) {
   switch (action.type) {
     case "TITLE_CHANGE":
+      return updateObject(state, {
+        postForm: {
+          ...state.postForm,
+          title: action.value
+        }
+      })
     case "CONTENT_CHANGE":
+      return updateObject(state, {
+        postForm: {
+          ...state.postForm,
+          content: action.value
+        }
+      })
     case "ADD_POST":
       return Object.assign({}, state, {
         posts: [
