@@ -8,7 +8,9 @@ function Post(props) {
         <h3>{ props.title }</h3>
         <p>{ props.date }</p>
         <div id="content">{ props.content }</div>
-        <h6 onClick={ () => {console.log(props.id + " -> deleted id"); props.delete(props.id) }}>Delete this post</h6>
+        <div id="erase" onClick={ () => {console.log(props.id + " -> deleted id"); props.delete(props.id) }}>
+          <h6>Delete this post</h6>
+        </div> 
     </div>
 }
 

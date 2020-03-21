@@ -14,6 +14,7 @@ code {
 
 .container{
   background-color: rgb(252, 252, 252);
+  transition-duration: 1s;
 }
 
 nav {
@@ -22,6 +23,8 @@ nav {
   color: white;
   display: flex;
   box-shadow: black 0px 0px 2px 0px;
+  align-items: center;
+  flex-flow: row;
 }
 
 .inactive{
@@ -30,16 +33,33 @@ nav {
   display: flexbox;
   align-self: center;
   padding: 50px;
-  transition-duration: 0.7s;
+
   font-size: larger;
 }
 
 .inactive:hover{
   color: white;
+  transition-duration: 0.7s;
 }
 
 .active{
   color: white;
+}
+
+#theme-switch{
+  color: rgb(194, 194, 194);
+  font-style: italic;
+  border: solid rgb(194, 194, 194) 1px;
+  padding: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: lighter;
+}
+
+#theme-switch:hover{
+  background-color: rgb(194, 194, 194);
+  color: black;
+  transition-duration: 200ms;
 }
 
 #home, #formContainer{
@@ -104,13 +124,13 @@ nav {
   display: inline-block;
   padding: 5px;
   border-radius: 5px;
-  transition-duration: 200ms;
   border: solid rgb(202, 202, 202) 1px;
 }
 
 .post h6:hover{
   color: black;
   background-color: rgb(202, 202, 202);
+  transition-duration: 200ms;
 }
 
 #erase{

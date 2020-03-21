@@ -39,7 +39,8 @@ let initialState = {
     title: "no title",
     content: "no content"
   },
-  counter: 4
+  counter: 4,
+  stylesheet: "index2.css"
 };
 
 function blogApp(state = initialState, action) {
@@ -83,6 +84,16 @@ function blogApp(state = initialState, action) {
             counter: --state.counter
         }  
       )}
+      case "SWITCH_THEME":
+        if (state.stylesheet === "index.css"){
+          return updateObject(state, {
+            stylesheet: "index2.css"
+          })}
+        else{
+          return updateObject(state, {
+            stylesheet: "index.css"
+          })
+        }
     default: return state
   }
 }
