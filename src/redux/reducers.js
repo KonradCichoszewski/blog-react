@@ -40,7 +40,7 @@ let initialState = {
     content: "no content"
   },
   counter: 4,
-  stylesheet: "index2.css"
+  colorTheme: "light"
 };
 
 function blogApp(state = initialState, action) {
@@ -85,13 +85,15 @@ function blogApp(state = initialState, action) {
         }  
       )}
       case "SWITCH_THEME":
-        if (state.stylesheet === "index.css"){
+        if (state.colorTheme === "light"){
+          document.documentElement.setAttribute('data-theme', 'dark');
           return updateObject(state, {
-            stylesheet: "index2.css"
+            colorTheme: "dark"
           })}
         else{
+          document.documentElement.setAttribute('data-theme', 'light');
           return updateObject(state, {
-            stylesheet: "index.css"
+            colorTheme: "light"
           })
         }
     default: return state
