@@ -7,6 +7,7 @@ class CreatePost extends React.Component {
             <div id='formContainer'>
                 <h1>Create post here</h1>
                 <PostForm/>
+                <p id='success'>Post added successfully!</p>
             </div>
         )
     }

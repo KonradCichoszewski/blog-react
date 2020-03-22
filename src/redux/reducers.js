@@ -60,6 +60,9 @@ function blogApp(state = initialState, action) {
         }
       })
     case "SUBMIT":
+      (document.getElementById("postForm")).reset();
+      document.getElementById("success").setAttribute('style', 'display: inline-block');
+      setTimeout(() => document.getElementById("success").setAttribute('style', 'display: none'), 3000);
       return updateObject(state, {
         posts: [
           ...state.posts,

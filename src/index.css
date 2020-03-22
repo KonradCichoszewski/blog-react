@@ -2,6 +2,8 @@
 html {
     --primaryBackground: #f3f3f3;
     --primaryTextColor: #000000;
+    --secondaryBackgroundColor: rgb(230, 230, 230);
+    --secondaryTextColor: rgb(77, 77, 77);
     --mainAccentColor: rgb(14, 151, 87);
 }
 
@@ -9,6 +11,8 @@ html {
 html[data-theme="dark"] {
     --primaryBackground: #181818;
     --primaryTextColor: #ffffff;
+    --secondaryBackgroundColor: rgb(34, 34, 34);
+    --secondaryTextColor: rgb(230, 230, 230);
     --mainAccentColor: rgb(255, 172, 19);
 }
 
@@ -35,16 +39,15 @@ code {
 
 nav {
   height: 100px;
-  background-color: black;
-  color: white;
   display: flex;
-  box-shadow: black 0px 0px 2px 0px;
+  box-shadow: black 0px 0px 4px 0px;
   align-items: center;
   flex-flow: row;
+  background-color: var(--secondaryBackgroundColor);
 }
 
 .inactive{
-  color: rgb(194, 194, 194);
+  color: var(--secondaryTextColor);
   text-decoration: none;
   display: flexbox;
   align-self: center;
@@ -54,11 +57,11 @@ nav {
 }
 
 .inactive:hover{
-  color: white;
+  color: var(--primaryTextColor);
 }
 
 .active{
-  color: white;
+  color: var(--primaryTextColor);
 }
 
 #theme-switch{
@@ -69,7 +72,7 @@ nav {
   border-radius: 5px;
   cursor: pointer;
   font-weight: lighter;
-  transition-duration: 200ms;
+  transition-duration: 200ms; 
 }
 
 #theme-switch:hover{
@@ -86,8 +89,8 @@ nav {
   margin-bottom: -5px;
   margin-top: 40px;
   border-radius: 5px;
-  color: white;
-  background-color: black;
+  color: var(--primaryTextColor);
+  background-color: var(--secondaryBackgroundColor);
   font-weight: 300;
   display: inline-block;
 }
@@ -97,8 +100,8 @@ nav {
   margin-top: 20px;
   margin-left: 30px;
   border-radius: 5px;
-  color: white;
-  background-color: rgb(0, 0, 0);
+  color: var(--primaryTextColor);
+  background-color: var(--secondaryBackgroundColor);
   font-weight: 300;
   display: inline-block;
 }
@@ -112,7 +115,7 @@ nav {
   padding-left: 20px;
   padding-bottom: 20px;
   margin-top: 40px;
-  border-radius: 0px 0px 0px 10px;
+  border-radius: 0px 0px 0px 0px;
   border-bottom: solid var(--mainAccentColor) 2px;
   border-left: solid var(--mainAccentColor) 6px;
 }
@@ -170,6 +173,19 @@ form > * {
 
 #postField{
   min-height: 100px;
+}
+
+#success {
+  color: green;
+  background-color: rgb(211, 243, 211);
+  font-style: italic;
+  border: solid green 1px;
+  padding: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: lighter;
+  transition-duration: 200ms;
+  display: none;
 }
 
 #footer{

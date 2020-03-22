@@ -5,7 +5,9 @@ import {titleChange, contentChange, handleSubmit} from '../redux/actions'
 
 function PostForm(props) {
   return (
-    <form onSubmit={e => {e.preventDefault(); props.handleSubmit()}}>
+    <form id="postForm"
+          onSubmit={e => {e.preventDefault();
+          props.handleSubmit()}}>
       <label>
         Title
         <textarea onChange={e => props.titleChange(e.target.value)}/>
