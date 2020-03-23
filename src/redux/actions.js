@@ -3,6 +3,7 @@ const CONTENT_CHANGE = 'CONTENT_CHANGE'
 const SUBMIT = 'SUBMIT'
 const DELETE_POST = 'DELETE_POST'
 const SWITCH_THEME = 'SWITCH_THEME'
+const MOUNT_POSTS = 'MOUNT_POSTS'
 
 export function titleChange(value) {
     console.log(value);
@@ -36,5 +37,12 @@ export function deletePost(id) {
 export function switchTheme() {
     return{
         type: SWITCH_THEME,
+    }
+}
+
+export function mountPosts(value) {
+    return{
+        type: MOUNT_POSTS,
+        value: value
     }
 }

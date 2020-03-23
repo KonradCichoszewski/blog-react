@@ -1,4 +1,7 @@
 import { combineReducers } from 'redux'
+import React from 'react'
+
+import Post from '../components/Post'
 
 function updateObject(oldObject, newValues) {
   return Object.assign({}, oldObject, newValues)
@@ -78,27 +81,48 @@ function blogApp(state = initialState, action) {
           content: ""
         }
       })
-      case "DELETE_POST": {
-        let filtered = Object.assign([], state.posts)
-        filtered = filtered.filter(post => { return post.id !== action.id })
-        console.log(filtered)
+    case "DELETE_POST": {
+      let filtered = Object.assign([], state.posts)
+      filtered = filtered.filter(post => { return post.id !== action.id })
+      console.log(filtered)
+      return updateObject(state, {
+          posts: filtered,
+          counter: --state.counter
+      }  
+    )}
+    case "SWITCH_THEME":
+      if (state.colorTheme === "light"){
+        document.documentElement.setAttribute('data-theme', 'dark');
         return updateObject(state, {
-            posts: filtered,
-            counter: --state.counter
-        }  
-      )}
-      case "SWITCH_THEME":
-        if (state.colorTheme === "light"){
-          document.documentElement.setAttribute('data-theme', 'dark');
-          return updateObject(state, {
-            colorTheme: "dark"
-          })}
-        else{
-          document.documentElement.setAttribute('data-theme', 'light');
-          return updateObject(state, {
-            colorTheme: "light"
-          })
+        colorTheme: "dark"
+      })} else{
+        document.documentElement.setAttribute('data-theme', 'light');
+        return updateObject(state, {
+          colorTheme: "light"
+        })
+      }
+    case "MOUNT_POSTS":
+      let sortedPosts = action.value.sort((a, b) => (a.id < b.id) ? 1 : -1)
+      let returnedPosts =
+      <div className='post-listing'>
+      {
+        sortedPosts.map( post =>
+          <Post
+            title={post.title}
+            content={post.content}
+            date={post.date}
+            id={post.id}
+            key={post.id}
+          />)
+      }
+      </div>;
+      return updateObject(state, {
+        posts: returnedPosts,
+        postForm: {
+          title: "",
+          content: ""
         }
+      })
     default: return state
   }
 }
