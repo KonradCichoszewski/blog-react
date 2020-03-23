@@ -1,7 +1,4 @@
 import { combineReducers } from 'redux'
-import React from 'react'
-
-import Post from '../components/Post'
 
 function updateObject(oldObject, newValues) {
   return Object.assign({}, oldObject, newValues)
@@ -102,26 +99,9 @@ function blogApp(state = initialState, action) {
         })
       }
     case "MOUNT_POSTS":
-      let sortedPosts = action.value.sort((a, b) => (a.id < b.id) ? 1 : -1)
-      let returnedPosts =
-      <div className='post-listing'>
-      {
-        sortedPosts.map( post =>
-          <Post
-            title={post.title}
-            content={post.content}
-            date={post.date}
-            id={post.id}
-            key={post.id}
-          />)
-      }
-      </div>;
+      let sortedPosts = (action.value).sort((a, b) => (Number(a.id) < Number(b.id) ? 1 : -1))
       return updateObject(state, {
-        posts: returnedPosts,
-        postForm: {
-          title: "",
-          content: ""
-        }
+        posts: sortedPosts
       })
     default: return state
   }
