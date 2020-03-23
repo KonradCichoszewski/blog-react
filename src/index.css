@@ -73,6 +73,9 @@ nav {
   cursor: pointer;
   font-weight: lighter;
   transition-duration: 200ms; 
+  position: absolute;
+  right: 40px;
+  top: 20px;
 }
 
 #theme-switch:hover{
@@ -117,7 +120,7 @@ nav {
   margin-top: 40px;
   border-radius: 0px 0px 0px 0px;
   border-bottom: solid var(--mainAccentColor) 2px;
-  border-left: solid var(--mainAccentColor) 6px;
+  border-left: solid var(--mainAccentColor) 2px;
 }
 
 .post h3{
