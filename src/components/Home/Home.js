@@ -1,5 +1,6 @@
 import React from 'react';
 import PostListing from './PostListing';
+import PostForm from './PostForm';
 
 class Home extends React.Component {
     render(){
@@ -7,6 +8,7 @@ class Home extends React.Component {
         <div id="home">
             <div id="home-posts">
                 <h1>Welcome to the Home Page!</h1>
+                <PostForm />
                 <PostListing />
             </div>
             <div id="home-aboutMe">

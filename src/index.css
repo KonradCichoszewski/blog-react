@@ -197,17 +197,28 @@ nav {
   text-align: justify;
 }
 
-#formContainer{
-  min-height: 70vh;
-  margin: 20px;
+#post-form{
+  margin-top: 20px;
+  height: min-content;
+  width: min-content;
+  background-color: var(--secondaryBackgroundColor);
+  border-radius: 3px;
+  padding: 10px;
 }
 
-form > * {
-  margin: 20px;
+form {
+  margin-bottom: -20px;
 }
 
-#postField{
-  min-height: 100px;
+.form-field{
+  resize: none;
+  border: none;
+  font-size: 1em;
+  padding: 15px;
+}
+
+.hidden-form{
+  display: none;
 }
 
 #success {
