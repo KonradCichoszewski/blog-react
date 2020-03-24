@@ -18,28 +18,11 @@ function getCurrentDate(){
 }
 
 let initialState = {
-  posts: [
-    { id: 3,
-      date: '10.03.2020 at 13:54',
-      title: "My third post",
-      content: "This is already my third post on the blog... Okay. This is already my third post on the blog... Okay." + 
-                " This is already my third post on the blog... Okay. This is already my third post on the blog... Okay."},
-    { id: 1,
-      date: '02.03.2020 at 08:14',
-      title: "My first post",
-      content: "This is my very first post on the blog! This is my very first post on the blog!" +
-                " This is my very first post on the blog! This is my very first post on the blog! "},
-    { id: 2,
-      date: '05.03.2020 at 23:01',
-      title: "My second post",
-      content: "And this is my second post on the blog! And this is my second post on the blog!" +
-                " And this is my second post on the blog! And this is my second post on the blog!"}
-  ],
+  posts: [],
   postForm: {
     title: "no title",
     content: "no content"
   },
-  counter: 4,
   colorTheme: "light"
 };
 
@@ -67,7 +50,7 @@ function blogApp(state = initialState, action) {
         posts: [
           ...state.posts,
           {
-            id: state.counter++,
+            id: "",
             title: state.postForm.title,
             content: state.postForm.content,
             date: getCurrentDate()
@@ -81,10 +64,8 @@ function blogApp(state = initialState, action) {
     case "DELETE_POST": {
       let filtered = Object.assign([], state.posts)
       filtered = filtered.filter(post => { return post.id !== action.id })
-      console.log(filtered)
       return updateObject(state, {
           posts: filtered,
-          counter: --state.counter
       }  
     )}
     case "SWITCH_THEME":

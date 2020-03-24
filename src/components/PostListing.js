@@ -11,7 +11,7 @@ class PostListing extends React.Component{
   .then( response => this.props.mountPosts(response.data))
   .catch(function (error) {
     // handle error
-    console.log(error + "jasnychuj");
+    console.log(error + " ---> jasny chuj!");
   })
   .finally()
 }

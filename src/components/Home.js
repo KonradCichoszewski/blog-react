@@ -5,9 +5,32 @@ class Home extends React.Component {
     render(){
         return(
         <div id="home">
-            <h1>Welcome to the Home Page!</h1>
-            <PostListing />
-        </div>       
+            <div id="home-posts">
+                <h1>Welcome to the Home Page!</h1>
+                <PostListing />
+            </div>
+            <div id="home-aboutMe">
+                <h1>About me</h1>
+                <p> I am somebody I like blueberries I often ride a bike.
+                     I am somebody I like blueberries I often ride a bike.
+                     I am somebody I like blueberries I often ride a bike.
+                     I am somebody I like blueberries I often ride a bike.
+                     I am somebody I like blueberries I often ride a bike.
+                     I am somebody I like blueberries I often ride a bike.
+                     I am somebody I like blueberries I often ride a bike.
+                     I am somebody I like blueberries I often ride a bike.
+                     I am somebody I like blueberries I often ride a bike.
+                     I am somebody I like blueberries I often ride a bike.
+                     I am somebody I like blueberries I often ride a bike.
+                     I am somebody I like blueberries I often ride a bike.
+                     I am somebody I like blueberries I often ride a bike.
+                     I am somebody I like blueberries I often ride a bike.
+                     I am somebody I like blueberries I often ride a bike.
+                     I am somebody I like blueberries I often ride a bike.
+                     I am somebody I like blueberries I often ride a bike.
+                </p>
+            </div>
+        </div>    
         )
     }
 }
