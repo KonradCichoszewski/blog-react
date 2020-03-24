@@ -44,8 +44,14 @@ function blogApp(state = initialState, action) {
       })
     case "SUBMIT":
       (document.getElementById("postForm")).reset();
-      document.getElementById("success").setAttribute('style', 'display: inline-block');
-      setTimeout(() => document.getElementById("success").setAttribute('style', 'display: none'), 3000);
+      document.getElementById("submit").setAttribute('value', 'Added!');
+      try{
+      document.getElementById("submit").setAttribute('style', 'background-color: green');
+      setTimeout(() => document.getElementById("submit").setAttribute('style', 'background-color: var(--secondaryBackgroundColor)'), 1000);
+      setTimeout(() => document.getElementById("submit").setAttribute('value', 'Submit'), 1000);   
+      } catch (error) {
+        console.log(error)
+      }
       return updateObject(state, {
         posts: [
           ...state.posts,

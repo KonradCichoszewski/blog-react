@@ -2,8 +2,8 @@ import React from 'react';
 import {Route} from 'react-router-dom';
 import { connect } from 'react-redux';
 
-import Home from './Home';
-import CreatePost from './CreatePost';
+import Home from './Home/Home';
+import CreatePost from './CreatePost/CreatePost';
 import NavigationBar from './NavigationBar';
 import Footer from './Footer';
 import '../index.css';

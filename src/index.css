@@ -3,7 +3,7 @@ html {
     --primaryBackground: #f3f3f3;
     --primaryTextColor: #000000;
     --secondaryBackgroundColor: rgb(221, 221, 221);
-    --secondaryTextColor: rgb(77, 77, 77);
+    --secondaryTextColor: rgb(124, 124, 124);
     --mainAccentColor: rgb(14, 151, 87);
 }
 
@@ -65,13 +65,12 @@ nav {
 }
 
 #theme-switch{
-  color: rgb(194, 194, 194);
+  color: var(--secondaryTextColor);
   font-style: italic;
-  border: solid rgb(194, 194, 194) 1px;
+  border: solid var(--secondaryTextColor) 1px;
   padding: 5px;
-  border-radius: 5px;
+  border-radius: 3px;
   cursor: pointer;
-  font-weight: lighter;
   transition-duration: 200ms; 
   position: absolute;
   right: 40px;
@@ -79,8 +78,8 @@ nav {
 }
 
 #theme-switch:hover{
-  background-color: rgb(194, 194, 194);
-  color: black;
+  color: var(--primaryTextColor);
+  border-color: var(--primaryTextColor);
 }
 
 #home {
@@ -93,14 +92,14 @@ nav {
 #home-posts, #formContainer{
   flex-basis: 60%;
   flex-grow: 1;
+  min-width: 500px;
 }
 
 #home-posts h1{
   padding: 15px;
-  border-radius: 5px;
+  border-radius: 3px;
   color: var(--primaryTextColor);
   background-color: var(--secondaryBackgroundColor);
-  font-weight: 300;
   display: inline-block;
   margin-block-start: 0;
   margin-block-end: 0;
@@ -111,17 +110,16 @@ nav {
   margin-left: 6%;
   flex-basis: 40%;
   flex-grow: 1;
-  border-radius: 10px;
+  border-radius: 3px;
   padding: 20px;
   height: min-content;
-  position: sticky;
   top: 40px;
+  min-width: 250px;
 }
 
 #home-aboutMe h1 {
   margin-block-start: 0;
   margin-block-end: 0;
-  font-weight: lighter;
   border-bottom: 2px solid var(--mainAccentColor);
   padding-bottom: 15px;
   margin-bottom: 20px;
@@ -130,22 +128,26 @@ nav {
 
 #home-aboutMe p {
   text-align: justify;
-  font-weight: lighter;
 }
 
 #formContainer h1{
   padding: 15px;
   margin-top: 20px;
   margin-left: 30px;
-  border-radius: 5px;
+  border-radius: 3px;
   color: var(--primaryTextColor);
   background-color: var(--secondaryBackgroundColor);
-  font-weight: 300;
   display: inline-flexbox;
 }
 
 #submit {
   cursor: pointer;
+  border: none;
+  background-color: var(--secondaryBackgroundColor);
+  color: var(--primaryTextColor);
+  font-size: x-large;
+  padding: 10px;
+  border-radius: 3px;
 }
 
 .post {
@@ -154,6 +156,7 @@ nav {
   margin-top: 40px;
   border-left: 2px solid var(--mainAccentColor);
   border-bottom: 2px solid var(--mainAccentColor);
+  max-width: 650px;
 }
 
 .post h3{
@@ -162,39 +165,35 @@ nav {
 
 .post p{
   margin-top: -10px;
-  color: grey;
   font-style: italic;
-  font-weight: lighter;
   font-size: small;
 }
 
-.post h6{
+#erase-post p{
   margin-top: 10px;
   margin-bottom: -5px;
-  color: grey;
+  color: var(--secondaryTextColor);
   font-style: italic;
-  font-weight: lighter;
   font-size: small;
   display: inline-block;
   padding: 5px;
-  border-radius: 5px;
-  border: solid rgb(202, 202, 202) 1px;
+  border-radius: 3px;
+  border: solid var(--secondaryTextColor) 1px;
   transition-duration: 200ms;
 }
 
-.post h6:hover{
-  color: black;
-  background-color: rgb(202, 202, 202);
+#erase-post p:hover{
+  color: var(--primaryTextColor);
+  border-color: var(--primaryTextColor);
 }
 
-#erase{
+#erase-post{
   display: inline;
   cursor: pointer;
 
 }
 
-#content {
-  font-weight: lighter;
+#post-content {
   text-align: justify;
 }
 
@@ -217,9 +216,8 @@ form > * {
   font-style: italic;
   border: solid green 1px;
   padding: 5px;
-  border-radius: 5px;
+  border-radius: 3px;
   cursor: pointer;
-  font-weight: lighter;
   transition-duration: 200ms;
   display: none;
 }
@@ -228,10 +226,19 @@ form > * {
   margin-top: 40px;
   display: block;
   min-height: 100px;
-  background-color: black;
-  color: white;
+  background-color: var(--secondaryBackgroundColor);
+  color: var(--primaryTextColor);
 }
 
 #footer p{
   padding: 20px;
+}
+
+@media only screen and (max-width: 935px) {
+  #home-aboutMe {
+      display: none;
+  }
+  #home-posts {
+    max-width: 600px;
+  }
 }

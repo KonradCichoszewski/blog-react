@@ -1,7 +1,7 @@
 import React from 'react'
 import Post from './Post'
 import { connect } from 'react-redux'
-import { mountPosts } from '../redux/actions'
+import { mountPosts } from '../../redux/actions'
 
 const axios = require('axios');
 
