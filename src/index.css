@@ -216,21 +216,43 @@ nav {
   font-style: italic;
   font-size: small;
   display: inline-block;
-  padding: 5px;
+  padding: 5px 15px;
   border-radius: 3px;
   border: solid var(--secondaryTextColor) 1px;
   transition-duration: 200ms;
 }
 
 #erase-post p:hover{
-  color: var(--primaryTextColor);
-  border-color: var(--primaryTextColor);
+  color: red;
+  border-color: red;
 }
 
 #erase-post{
   display: inline;
   cursor: pointer;
 
+}
+
+.edit-post{
+  margin-top: 10px;
+  margin-bottom: -5px;
+  color: var(--secondaryTextColor);
+  font-style: italic;
+  font-size: small;
+  display: inline-block;
+  padding: 5px;
+  border-radius: 3px;
+  border: solid var(--secondaryTextColor) 1px;
+  transition-duration: 200ms;
+  cursor: pointer;
+  margin-right: 15px;
+  padding: 5px 15px;
+  transition-duration: 200ms;
+}
+
+.edit-post:hover{
+  color: var(--primaryAccentColor);
+  border-color: var(--primaryAccentColor);
 }
 
 #post-content {
