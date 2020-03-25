@@ -124,12 +124,12 @@ nav {
 }
 
 #overlay {
-  position: fixed; /* Positioning and size */
+  position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(126, 126, 126, 0.5); /* color */
+  background-color: rgba(126, 126, 126, 0.5);
   display: none;
 }
 
@@ -209,6 +209,20 @@ nav {
   font-size: small;
 }
 
+.comments-section{
+  margin-top: 20px;
+  border-left: 1px solid var(--primaryAccentColor);
+  border-top: 1px solid var(--primaryAccentColor);
+  padding: 0 0 0 20px;
+}
+
+.single-comment{
+  background-color: var(--secondaryBackgroundColor);
+  border-radius: 3px;
+  padding: 5px;
+  font-style: italic;
+}
+
 #erase-post p{
   margin-top: 10px;
   margin-bottom: -5px;
@@ -276,9 +290,11 @@ nav {
   resize: none;
   border: none;
   font-size: 1em;
-  padding: 15px;
+  padding: 20px 0 0;
   padding-bottom: -15px;
-  width: max-content;
+  width: 95%;
+  height: min-content;
+
 }
 
 #footer{
