@@ -25,7 +25,7 @@ export function contentChange(value) {
 
 export function handleSubmit() {
     return{
-        type: SUBMIT
+        type: SUBMIT,
     }
 }
 

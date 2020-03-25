@@ -6,16 +6,18 @@ import {titleChange, contentChange, handleSubmit, hideModal} from '../../redux/a
 function PostForm(props) {
   return (
     <div id="post-form">
-      <form onSubmit={e => {e.preventDefault(); props.handleSubmit()}}>
-        <textarea className="form-field" placeholder="New post title..."
-                  onChange={e => props.titleChange(e.target.value)}
-                  required="required" /><br/>
-        <textarea placeholder="Post text"
-                  onChange={e => props.contentChange(e.target.value)}
-                  required="required" /><br/>
-        <input id="submit" type="submit" value="Submit" />
-      </form>
-      <button onClick={props.hideModal}>Return</button>
+      <div>
+        <form onSubmit={e => {e.preventDefault(); props.handleSubmit()}}>
+          <textarea className="form-field" placeholder="Title"
+                    onChange={e => props.titleChange(e.target.value)}
+                    required="required" /><br/>
+          <textarea className="form-field" placeholder="Post text"
+                    onChange={e => props.contentChange(e.target.value)}
+                    required="required" /><br/>
+          <input className="transparent-button" type="submit" value="Submit" />
+        </form>
+      </div>
+      <p className="transparent-button" onClick={props.hideModal}>Return</p>
     </div>
   )
 }

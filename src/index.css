@@ -108,9 +108,8 @@ nav {
   margin-block-end: 0;
 }
 
-#new-post-button {
+.transparent-button {
   color: var(--primaryAccentColor);
-  /* font-style: italic; */
   border: solid var(--primaryAccentColor) 2px;
   padding: 5px;
   cursor: pointer;
@@ -119,7 +118,7 @@ nav {
   font-weight: 600;
 }
 
-#new-post-button:hover{
+.transparent-button:hover{
   color: var(--secondaryAccentColor);
   border-color: var(--secondaryAccentColor);
 }
@@ -135,14 +134,15 @@ nav {
 }
 
 .modal {
-  position: fixed; /* positioning in center of page */
+  position: fixed;
   top: 50vh;
   left: 50vw;
   transform: translate(-50%,-50%);
-  height: 400px; /* size */
+  height: 400px;
   width: 600px;
   background-color: var(--secondaryBackgroundColor);
   border-radius: 3px;
+  max-width: 90vw;
 }
 
 #home-aboutMe {
@@ -243,11 +243,11 @@ nav {
   width: min-content;
   background-color: var(--secondaryBackgroundColor);
   border-radius: 3px;
-  padding: 10px;
+  padding: 30px;
 }
 
-form {
-  margin-bottom: -20px;
+#post-form > * {
+  padding: 20px;
 }
 
 .form-field{
@@ -255,22 +255,8 @@ form {
   border: none;
   font-size: 1em;
   padding: 15px;
-}
-
-.hidden-form{
-  display: none;
-}
-
-#success {
-  color: green;
-  background-color: rgb(211, 243, 211);
-  font-style: italic;
-  border: solid green 1px;
-  padding: 5px;
-  border-radius: 3px;
-  cursor: pointer;
-  transition-duration: 200ms;
-  display: none;
+  padding-bottom: -15px;
+  width: max-content;
 }
 
 #footer{

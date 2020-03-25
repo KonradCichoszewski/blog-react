@@ -1,4 +1,5 @@
 import { combineReducers } from 'redux'
+import Axios from 'axios';
 
 function updateObject(oldObject, newValues) {
   return Object.assign({}, oldObject, newValues)
@@ -43,14 +44,22 @@ function blogApp(state = initialState, action) {
         }
       })
     case "SUBMIT":
+      console.log("Hit submit!")
+      let newTitle = state.postForm.title;
+      let newContent = state.postForm.content;
+      Axios.post('http://localhost:8000/api/v1/posts/', {
+        author: 1,
+        title: newTitle,
+        content: newContent
+      })
       document.getElementById("overlay").setAttribute('style', 'display: none');
       return updateObject(state, {
         posts: [
           ...state.posts,
           {
             id: "",
-            title: state.postForm.title,
-            content: state.postForm.content,
+            title: newTitle,
+            content: newContent,
             date: getCurrentDate()
           }
         ],
@@ -60,6 +69,8 @@ function blogApp(state = initialState, action) {
         }
       })
     case "DELETE_POST": {
+      let url = 'http://localhost:8000/api/v1/posts/' + action.id + '/';
+      Axios.delete(url)
       let filtered = Object.assign([], state.posts)
       filtered = filtered.filter(post => { return post.id !== action.id })
       return updateObject(state, {

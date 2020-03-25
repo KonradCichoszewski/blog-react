@@ -12,9 +12,17 @@ class PostListing extends React.Component{
   .catch(function (error) {
     // handle error
     console.log(error + " ---> jasny chuj!");
-  })
-  .finally()
-}
+  }).finally()
+  }
+
+  componentDidUpdate() {
+    axios.get('http://localhost:8000/api/v1/posts/')
+  .then( response => this.props.mountPosts(response.data))
+  .catch(function (error) {
+    // handle error
+    console.log(error + " ---> jasny chuj!");
+  }).finally()
+  }
 
   render(){
   let sortedPosts = this.props.posts.sort((a, b) => (a.id < b.id) ? 1 : -1)
@@ -24,8 +32,9 @@ class PostListing extends React.Component{
         <Post
           title={post.title}
           content={post.content}
-          date={post.date}
+          created={post.created}
           id={post.id}
+          author={post.author}
           key={post.id}
         />)
     }

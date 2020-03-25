@@ -10,8 +10,8 @@ class Home extends React.Component {
         return(
         <div id="home">
             <div id="home-posts">
-                <h1 id="chuj">Welcome to the Home Page!</h1>
-                <p id="new-post-button" onClick={this.props.showModal}> + Add new post </p>
+                <h1 id="chuj">Welcome to the Home Page!</h1><br />
+                <p className="transparent-button" onClick={this.props.showModal}> + Add new post </p>
                 <div id="overlay">
                     <div className="modal">
                          <PostForm />
