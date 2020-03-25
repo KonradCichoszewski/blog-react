@@ -6,6 +6,7 @@ const SWITCH_THEME = 'SWITCH_THEME'
 const MOUNT_POSTS = 'MOUNT_POSTS'
 const SHOW_MODAL = 'SHOW_MODAL'
 const HIDE_MODAL = 'HIDE_MODAL'
+const ADD_COMMENT = 'ADD_COMMENT'
 
 export function titleChange(value) {
     console.log(value);
@@ -58,5 +59,11 @@ export function showModal(){
 export function hideModal(){
     return{
         type: HIDE_MODAL
+    }
+}
+
+export function addComment(){
+    return{
+        type: ADD_COMMENT
     }
 }
