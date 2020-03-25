@@ -43,15 +43,7 @@ function blogApp(state = initialState, action) {
         }
       })
     case "SUBMIT":
-      (document.getElementById("postForm")).reset();
-      document.getElementById("submit").setAttribute('value', 'Added!');
-      try{
-      document.getElementById("submit").setAttribute('style', 'background-color: green');
-      setTimeout(() => document.getElementById("submit").setAttribute('style', 'background-color: var(--secondaryBackgroundColor)'), 1000);
-      setTimeout(() => document.getElementById("submit").setAttribute('value', 'Submit'), 1000);   
-      } catch (error) {
-        console.log(error)
-      }
+      document.getElementById("overlay").setAttribute('style', 'display: none');
       return updateObject(state, {
         posts: [
           ...state.posts,
@@ -90,6 +82,12 @@ function blogApp(state = initialState, action) {
       return updateObject(state, {
         posts: sortedPosts
       })
+    case "SHOW_MODAL":
+      document.getElementById("overlay").setAttribute('style', 'display: block');
+      return state
+    case "HIDE_MODAL":
+      document.getElementById("overlay").setAttribute('style', 'display: none');
+      return state
     default: return state
   }
 }

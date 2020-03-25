@@ -7,7 +7,7 @@ const axios = require('axios');
 
 class PostListing extends React.Component{
   componentDidMount() {
-    axios.get('https://5e787906491e9700162de1aa.mockapi.io/api/blog/posts')
+    axios.get('http://localhost:8000/api/v1/posts/')
   .then( response => this.props.mountPosts(response.data))
   .catch(function (error) {
     // handle error

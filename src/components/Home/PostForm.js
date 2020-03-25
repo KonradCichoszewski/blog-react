@@ -1,7 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
 
-import {titleChange, contentChange, handleSubmit} from '../../redux/actions'
+import {titleChange, contentChange, handleSubmit, hideModal} from '../../redux/actions'
 
 function PostForm(props) {
   return (
@@ -10,11 +10,12 @@ function PostForm(props) {
         <textarea className="form-field" placeholder="New post title..."
                   onChange={e => props.titleChange(e.target.value)}
                   required="required" /><br/>
-        <textarea className="hidden-form form-field" placeholder="Post text"
+        <textarea placeholder="Post text"
                   onChange={e => props.contentChange(e.target.value)}
                   required="required" /><br/>
-        <input className="hidden-form" id="submit" type="submit" value="Submit" />
+        <input id="submit" type="submit" value="Submit" />
       </form>
+      <button onClick={props.hideModal}>Return</button>
     </div>
   )
 }
@@ -30,7 +31,8 @@ const mapDispatchToProps = dispatch => {
   return {
     titleChange: (e) => dispatch(titleChange(e)),
     contentChange: (e) => dispatch(contentChange(e)),
-    handleSubmit: () => dispatch(handleSubmit())
+    handleSubmit: () => dispatch(handleSubmit()),
+    hideModal: () => dispatch(hideModal())
   }
 }
 
